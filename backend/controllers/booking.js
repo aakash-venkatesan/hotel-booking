@@ -1,11 +1,13 @@
 import Booking from "../models/Booking.js";
 import Room from "../models/Room.js";
 import { createError } from "../utils/error.js";
+import User from '../models/User.js'
 
 // 📌 Book a Room
 export const bookRoom = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id);
+    console.log(req.body.user)
+    const user = await User.findById(req.body.user);
     if (!user) return res.status(404).json({ message: "User not found" });
 
     const room = await Room.findById(req.body.room);

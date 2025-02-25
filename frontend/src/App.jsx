@@ -1,9 +1,14 @@
-function App() {
-  return (
-    <>
-      <h1>Hotel Booking Form</h1>
-    </>
-  )
-}
+import React from "react";
+import HotelBookingPage from "./pages/HotelbookingPage";
 
-export default App
+ // Correct path to your HotelBookingPage component
+
+const App = () => {
+  return (
+    <div className="App">
+      <HotelBookingPage />  {/* Rendering the HotelBookingPage component */}
+    </div>
+  );
+};
+
+export default App;
