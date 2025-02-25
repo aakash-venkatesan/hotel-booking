@@ -485,7 +485,25 @@ const HotelInfo = ({ hotelId }) => {
           <strong>Location:</strong> {hotelInfo.address || "Location not available"}
         </p>
         <p>
-          <strong>Rating:</strong> {hotelInfo.rating ? "⭐".repeat(Math.round(hotelInfo.rating)) : "No rating"}
+          <strong>Rating:</strong>
+          {hotelInfo.rating ? (
+            <>
+              {/* Render full stars */}
+              <span style={{ fontSize: "1.5em", color: "#ffbb33" }}>
+                {"⭐".repeat(Math.floor(hotelInfo.rating))}
+              </span>
+              {/* Render half star if applicable */}
+              {hotelInfo.rating % 1 !== 0 && (
+                <span style={{ fontSize: "1.5em", color: "#ffbb33" }}>⭐</span>
+              )}
+              {/* Display rating in decimals */}
+              <span style={{ fontSize: "1.2em", color: "#777" }}>
+                ({hotelInfo.rating.toFixed(1)})
+              </span>
+            </>
+          ) : (
+            "No rating"
+          )}
         </p>
       </div>
 

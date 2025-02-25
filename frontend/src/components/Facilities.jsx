@@ -23,7 +23,7 @@ const Facilities = ({ hotelId, accessToken }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // You can uncomment this to fetch data if needed later
+    // Uncomment to fetch data later
     // const fetchFacilities = async () => {
     //   try {
     //     setLoading(true);
@@ -57,15 +57,15 @@ const Facilities = ({ hotelId, accessToken }) => {
         padding: "20px",
         maxWidth: "1000px",
         margin: "auto",
-        backgroundColor: "#f9f9f9",
-        borderRadius: "8px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        backgroundColor: "#f3f4f6",
+        borderRadius: "10px",
+        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <h2 style={{ fontSize: "2em", color: "#333", fontWeight: "600", textAlign: "center" }}>Facilities</h2>
+      <h2 style={{ fontSize: "2.2em", color: "#333", fontWeight: "700", textAlign: "center" }}>Facilities</h2>
 
       {/* Render Basic Facilities */}
-      <h3 style={{ color: "#4CAF50", textAlign: "center" }}>Basic Amenities</h3>
+      <h3 style={{ color: "#4CAF50", textAlign: "center", fontWeight: "600" }}>Basic Amenities</h3>
       <div
         style={{
           display: "flex",
@@ -80,16 +80,24 @@ const Facilities = ({ hotelId, accessToken }) => {
             <div
               key={facility._id}
               style={{
-                backgroundColor: "#E8F5E9",
+                backgroundColor: "#C8E6C9", // Light Green Background
                 borderRadius: "12px",
                 padding: "20px",
                 textAlign: "center",
-                width: "200px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease",
+                width: "220px",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 8px 15px rgba(0, 0, 0, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)";
               }}
             >
-              <h4 style={{ color: "#388E3C", fontSize: "1.1em", fontWeight: "500" }}>{facility.name}</h4>
+              <h4 style={{ color: "#388E3C", fontSize: "1.2em", fontWeight: "500" }}>{facility.name}</h4>
             </div>
           ))
         ) : (
@@ -98,7 +106,7 @@ const Facilities = ({ hotelId, accessToken }) => {
       </div>
 
       {/* Render Wellness Facilities */}
-      <h3 style={{ color: "#00B8D4", textAlign: "center" }}>Wellness Facilities</h3>
+      <h3 style={{ color: "#00B8D4", textAlign: "center", fontWeight: "600" }}>Wellness Facilities</h3>
       <div
         style={{
           display: "flex",
@@ -113,16 +121,24 @@ const Facilities = ({ hotelId, accessToken }) => {
             <div
               key={facility._id}
               style={{
-                backgroundColor: "#E1F5FE",
+                backgroundColor: "#B3E5FC", // Light Blue Background
                 borderRadius: "12px",
                 padding: "20px",
                 textAlign: "center",
-                width: "200px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease",
+                width: "220px",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 8px 15px rgba(0, 0, 0, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)";
               }}
             >
-              <h4 style={{ color: "#0288D1", fontSize: "1.1em", fontWeight: "500" }}>{facility.name}</h4>
+              <h4 style={{ color: "#0288D1", fontSize: "1.2em", fontWeight: "500" }}>{facility.name}</h4>
             </div>
           ))
         ) : (
@@ -131,7 +147,7 @@ const Facilities = ({ hotelId, accessToken }) => {
       </div>
 
       {/* Render Business Facilities */}
-      <h3 style={{ color: "#FF7043", textAlign: "center" }}>Business Facilities</h3>
+      <h3 style={{ color: "#FF7043", textAlign: "center", fontWeight: "600" }}>Business Facilities</h3>
       <div
         style={{
           display: "flex",
@@ -145,16 +161,24 @@ const Facilities = ({ hotelId, accessToken }) => {
             <div
               key={facility._id}
               style={{
-                backgroundColor: "#FFEBEE",
+                backgroundColor: "#FFCCBC", // Light Orange Background
                 borderRadius: "12px",
                 padding: "20px",
                 textAlign: "center",
-                width: "200px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease",
+                width: "220px",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 8px 15px rgba(0, 0, 0, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)";
               }}
             >
-              <h4 style={{ color: "#D32F2F", fontSize: "1.1em", fontWeight: "500" }}>{facility.name}</h4>
+              <h4 style={{ color: "#D32F2F", fontSize: "1.2em", fontWeight: "500" }}>{facility.name}</h4>
             </div>
           ))
         ) : (
