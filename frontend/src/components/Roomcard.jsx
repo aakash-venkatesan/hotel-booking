@@ -232,7 +232,7 @@ const RoomCard = ({ room, userId }) => {
                 </span>
               ))
             ) : (
-              <p style={{ fontSize: "0.95em", color: "#777" }}>No facilities available.</p>
+              <p style={{ fontSize: "0.95em", color: "#777" }}></p>
             )}
           </div>
 
