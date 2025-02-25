@@ -2,17 +2,17 @@ import mongoose from "mongoose";
 
 const HotelSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-    city: { type: String, required: true },
-    address: { type: String, required: true },
-    state: { type: String, required: true }, // Added state
-    country: { type: String, required: true }, // Added country
-    code: { type: String, required: true }, // Added code
-    distance: { type: String, required: true },
+    name: { type: String},
+    type: { type: String },
+    city: { type: String },
+    address: { type: String},
+    state: { type: String }, // Added state
+    country: { type: String }, // Added country
+    code: { type: String }, // Added code
+    distance: { type: String },
     photos: { type: [String] },
-    title: { type: String, required: true },
-    description: { type: String, required: true }, // Renamed desc -> description
+    title: { type: String},
+    description: { type: String }, // Renamed desc -> description
     rating: { type: Number, min: 0, max: 5 },
     rooms: [
       {
@@ -22,10 +22,10 @@ const HotelSchema = new mongoose.Schema(
         default: [],
       },
     ],
-    cheapestPrice: { type: Number, required: true },
-    featured: { type: Boolean, default: false },
+    cheapestPrice: { type: Number },
+    featured: { type: Boolean },
     offerings: { type: [String] },
-    cancelationPolicy: { type: String, required: true },
+    cancelationPolicy: { type: String},
   },
   { timestamps: true }
 );

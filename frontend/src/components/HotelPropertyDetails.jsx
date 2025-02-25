@@ -66,7 +66,9 @@ const HotelPropertyDetails = ({ prev }) => {
         };
 
         // Send the finalData to your backend
-        // await axios.post('/api/hotels', finalData);
+        await axios.post('http://localhost:5000/api/hotels', finalData, {
+          withCredentials: true,
+        });
         alert('Hotel published successfully!');
         console.log('Hotel data:', finalData);
       } catch (error) {
