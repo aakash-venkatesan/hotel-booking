@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import "./App.css";
 import LoginNavBar from './LoginNavBar';
 const Userregister = () => {
   const location = useLocation();
