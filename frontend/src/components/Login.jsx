@@ -13,26 +13,33 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         try {
             const response = await fetch('http://localhost:5000/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
+                credentials: 'include' 
             });
-
+    
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-
+    
             const data = await response.json();
-            console.log("Login Success:", data);
+            console.log("Response Data:", data);  // Debugging step
+    
+            sessionStorage.setItem('userid',data.details._id)
+    
+            navigate('/profile');  // Ensure this line executes
         } catch (error) {
             console.error('Error:', error);
+            setError(error.message);  // Display error on UI
         }
     };
+    
     return (
         <>
             <LoginNavBar />
